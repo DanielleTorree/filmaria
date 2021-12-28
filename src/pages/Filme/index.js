@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import apiFilmes from '../../services/api';
+import { toast } from 'react-toastify';
 
 const Filme = () => {
     const { id } = useParams();
@@ -19,6 +20,15 @@ const Filme = () => {
 
         // Se tiver algum filme salvo com o mesmo id, será ignorado
         const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)
+
+        if(hasFilme){
+            toast.info('Você já possui este filme salvo.');
+            return;
+        }
+
+        filmesSalvos.push(filme);
+        localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
+        toast.success('Filme salvo com sucesso!');
     }
 
     useEffect(() => {
