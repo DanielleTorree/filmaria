@@ -27,19 +27,21 @@ const Home = () =>  {
 
   return (
     <div className='container'>
-      <h1>Página Home</h1>
       {!loading ? (
-        <div className='lista-filmes'>
-          {filmes.map((filme) => {
-            return(
-              <article key={filme.id}>
-                <strong>{filme.nome}</strong>
-                <img src={filme.foto} alt={filme.nome}/>
-                <Link to='/'>Acessar</Link>
-              </article>
-            );
-          })}
-        </div>
+        <>
+          <div className='lista-filmes'>
+            
+            {filmes.map((filme) => {
+              return(
+                <article key={filme.id}>
+                  <strong>{filme.nome}</strong>
+                  <img src={filme.foto} alt={filme.nome}/>
+                  <Link to={`/filme/${filme.id}`}>Acessar</Link>
+                </article>
+              );
+            })}
+          </div>
+        </>
       ) : (
         <Loader
           type="ThreeDots"
