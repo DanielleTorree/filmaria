@@ -7,6 +7,8 @@
 
 ### Criei este Projeto com o intuito de aprofundar meus conhecimentos em React. Este exercício foi tirado do curso React Js do zero ao avançado na prática.
 
+### Este site está hospedado na Netlify: clique neste <a href="https://reactfilmaria.netlify.app"> link </a> para abrir o site
+
 ### Seguem abaixo as imagens do site em React: 
 
 </br><div style="display: inline_block">
